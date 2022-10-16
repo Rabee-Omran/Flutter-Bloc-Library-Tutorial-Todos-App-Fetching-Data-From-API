@@ -4,7 +4,7 @@ import 'package:todos_app/widgets/error_widget.dart';
 import 'package:todos_app/widgets/loading_widget.dart';
 import 'package:todos_app/widgets/todos_widget.dart';
 
-import '../bloc/todos_bloc.dart';
+import '../cubit/todos_cubit.dart';
 
 class TodosPage extends StatelessWidget {
   const TodosPage({super.key});
@@ -16,7 +16,7 @@ class TodosPage extends StatelessWidget {
           centerTitle: true,
           title: const Text("Todos"),
         ),
-        body: BlocBuilder<TodosBloc, TodosState>(
+        body: BlocBuilder<TodosCubit, TodosState>(
           builder: (context, state) {
             if (state is LoadedState) {
               return TodosWidget(todos: state.todos);
