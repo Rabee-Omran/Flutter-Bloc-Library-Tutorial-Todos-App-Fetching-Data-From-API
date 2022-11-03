@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:todos_app/cubit/todos_cubit.dart';
 import 'package:todos_app/widgets/error_widget.dart';
 import 'package:todos_app/widgets/loading_widget.dart';
 import 'package:todos_app/widgets/todos_widget.dart';
-
-import '../cubit/todos_cubit.dart';
 
 class TodosPage extends StatelessWidget {
   const TodosPage({super.key});
