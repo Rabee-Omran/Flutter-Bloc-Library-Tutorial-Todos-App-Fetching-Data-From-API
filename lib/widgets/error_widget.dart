@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todos_app/cubit/todos_cubit.dart';
+
+import '../bloc/todos_bloc.dart';
 
 class MyErrorWidget extends StatelessWidget {
   final String message;
@@ -22,7 +23,7 @@ class MyErrorWidget extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {
-                BlocProvider.of<TodosCubit>(context).getAllTodos();
+                BlocProvider.of<TodosBloc>(context).add(GetAllTodosEvent());
               },
               child: const Text("Try Again"))
         ],
