@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/todos_bloc.dart';
+import '../bloc/todos_v2/todos_v2_bloc.dart';
 
 class MyErrorWidget extends StatelessWidget {
   final String message;
@@ -23,7 +23,8 @@ class MyErrorWidget extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {
-                BlocProvider.of<TodosBloc>(context).add(GetAllTodosEvent());
+                BlocProvider.of<TodosV2Bloc>(context)
+                    .add(const TodosV2Event.getAllTodos());
               },
               child: const Text("Try Again"))
         ],

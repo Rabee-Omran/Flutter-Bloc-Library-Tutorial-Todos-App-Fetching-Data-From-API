@@ -19,7 +19,7 @@ class TodosBloc extends Bloc<TodosEvent, TodosState> {
           emit(const ErrorState(
               "Something Went Wrong, Please Try Again Later !"));
         }
-      }
+      } else if (event is GetTodoDetailEvent) {}
     });
   }
 }
